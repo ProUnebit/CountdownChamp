@@ -39,9 +39,6 @@ class Clock extends React.Component {
     }
 
     render () {
-
-        // this.getTimeUntil(this.props.deadline);
-
         return (
             <div>
                 <div className="clock-days">{this.leading_0(this.state.days)} days</div>
