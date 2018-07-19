@@ -7,7 +7,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            deadline: 'December 25, 2018'
+            deadline: 'June 04, 2019'
         }
     }
 
@@ -20,7 +20,7 @@ class App extends React.Component {
     render () {
         return (
             <div className="app">
-                <div className="app-title">Countdown to {this.state.deadline}</div>
+                <div className="app-title">Countdown to <span>{this.state.deadline}</span></div>
                 <Clock deadline = {this.state.deadline}/>
                 <Form inline>
                     <FormControl

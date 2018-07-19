@@ -1,19 +1,42 @@
+body {
+    background: -webkit-linear-gradient(right, #e1eec3, #f05053);
+    background: -o-linear-gradient(right, #e1eec3, #f05053);
+    background: linear-gradient(to left, #e1eec3, #f05053);
+}
+
 .app {
     text-align: center;
     font-size: 35px;
-    margin-top: 20%;
+    margin-top: 15%;
+    background-color: whitesmoke;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 25px;
 }
 
 .app-title {
     font-size: 50px;
+    color: #444;
+}
+
+.app-title span {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 60px;
+    color: #F57A00;
 }
 
 .clock-days, .clock-hours, .clock-minutes, .clock-seconds {
     display: inline;
     margin: 10px;
+    font-family: 'Titillium Web', sans-serif;
+    color: #444;
+}
+
+.clock-days span, .clock-hours span, .clock-minutes span, .clock-seconds span {
+    color: #F57A00;
 }
 
 .deadline-input {
-    font-size: 25px;
-    margin: 5px;
+    font-size: 22px;
+    margin: 10px;
 }
