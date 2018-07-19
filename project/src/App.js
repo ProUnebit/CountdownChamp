@@ -7,8 +7,21 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            deadline: 'June 04, 2019'
+            deadline: 'June 04, 2019',
+            buttonActivity: true
         }
+    }
+
+    componentDidMount() {
+        let element = document.getElementsByTagName("Button");
+        console.log(element);
+    }
+
+    writeInInput = (event) => {
+        this.setState({
+            newDeadLine: event.target.value,
+            buttonActivity: event.target.value !== '' ? false : true
+        })
     }
 
     changeDeadLine = () => {
@@ -26,9 +39,13 @@ class App extends React.Component {
                     <FormControl
                         className="deadline-input"
                         placholder="new date"
-                        onChange = {event => this.setState({newDeadLine: event.target.value})}
+                        onChange = {this.writeInInput}
                     />
-                <Button onClick = {this.changeDeadLine}>Submit</Button>
+                <Button
+                    bsStyle="info"
+                    disabled = {this.state.buttonActivity}
+                    onClick = {this.changeDeadLine}
+                    >Submit</Button>
                 </Form>
             </div>
         )
