@@ -12,7 +12,7 @@ class App extends React.Component {
         }
     }
 
-    regExpForInput = /\b[\Da-z]{3,9}\b\s(0?[1-9]|[12][0-9]|3[01])\s(201[89]|20[2-9][0-9]|2[1-9][0-9][0-9]|[3-9][0-9][0-9][0-9])\b/i;
+    regExpForInput = /^\b[\Da-z]{3,9}\b\s(0?[1-9]|[12]\d|3[01])\s(201[89]|20[2-9]\d|2[1-9]\d{2}|[3-9]\d{3})$/i;
 
     componentDidMount() {
         let element = document.getElementsByTagName("Button")[0];
