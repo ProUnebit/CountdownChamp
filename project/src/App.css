@@ -41,6 +41,7 @@ body {
     margin: 10px;
 }
 
-.deadline-input[value="Enter date"] {
-    color: #786858;
+.helpblock {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 16px;
 }

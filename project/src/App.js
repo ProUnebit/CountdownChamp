@@ -1,7 +1,7 @@
 import React from 'react'
 import Clock from './Clock';
 import './App.css'
-import { Form, FormControl, Button } from 'react-bootstrap';
+import { Form, FormControl, Button, HelpBlock } from 'react-bootstrap';
 
 class App extends React.Component {
     constructor(props) {
@@ -19,15 +19,12 @@ class App extends React.Component {
         console.log(element);
     }
 
-    // defaultValueRemove = (event) => {
-    //     event.target.value = '';
-    // }
-
     writeInInput = (event) => {
 
         this.setState({
             newDeadLine: event.target.value,
             buttonActivity: !this.regExpForInput.test(event.target.value)
+            // helpBlockContext: !this.state.buttonActivity ? '👍' : "This form format is: 'Month DD YYYY'"
         })
     }
 
@@ -44,15 +41,19 @@ class App extends React.Component {
                 <Clock deadline = {this.state.deadline}/>
                 <Form inline>
                     <FormControl
+                        bsSize="lg"
+                        type="text"
+                        placeholder="Enter date"
                         className="deadline-input"
-                        placholder="new date"
                         onChange = {this.writeInInput}
                     />
                 <Button
                     bsStyle="info"
+                    bsSize="lg"
                     disabled = {this.state.buttonActivity}
                     onClick = {this.changeDeadLine}
                     >Submit</Button>
+                <HelpBlock className="helpblock">This form format is: <strong>'Month DD YYYY'</strong></HelpBlock>
                 </Form>
             </div>
         )
