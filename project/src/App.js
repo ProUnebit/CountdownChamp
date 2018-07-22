@@ -9,24 +9,36 @@ class App extends React.Component {
         this.state = {
             deadline: 'June 04 2019',
             buttonActivity: true
+            // isToggleOnInput: false
         }
     }
 
     regExpForInput = /^\b[\Da-z]{3,9}\b\s(0?[1-9]|[12]\d|3[01])\s(201[89]|20[2-9]\d|2[1-9]\d{2}|[3-9]\d{3})$/i;
 
     componentDidMount() {
-        let element = document.getElementsByTagName("Button")[0];
-        console.log(element);
+        // let element = document.getElementsByTagName("Button")[0];
+        // console.log(element);
     }
 
-    writeInInput = (event) => {
+    writeInInput = event => {
+
+        event.preventDefault();
 
         this.setState({
             newDeadLine: event.target.value,
             buttonActivity: !this.regExpForInput.test(event.target.value)
-            // helpBlockContext: !this.state.buttonActivity ? '👍' : "This form format is: 'Month DD YYYY'"
         })
+
+        // this.helpBlockContext()
     }
+
+    // helpBlockContext = () => {
+    //     if (!this.state.buttonActivity) {
+    //         this.setState(prevState => ({
+    //             isToggleOnInput: !prevState.isToggleOnInput
+    //         }));
+    //     }
+    // }
 
     changeDeadLine = () => {
         this.setState({
@@ -53,7 +65,10 @@ class App extends React.Component {
                     disabled = {this.state.buttonActivity}
                     onClick = {this.changeDeadLine}
                     >Submit</Button>
-                <HelpBlock className="helpblock">This form format is: <strong>'Month DD YYYY'</strong></HelpBlock>
+                <HelpBlock
+                    className = {this.state.buttonActivity ? 'helpblock' : 'helpblock-success'}
+                    >{!this.state.buttonActivity ? '👍' : "This form format is: 'Month DD YYYY'"}
+                </HelpBlock>
                 </Form>
             </div>
         )
