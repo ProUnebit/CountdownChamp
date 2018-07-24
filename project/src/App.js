@@ -1,7 +1,7 @@
 import React from 'react'
 import Clock from './Clock';
-import './App.css'
 import { Form, FormControl, Button, HelpBlock } from 'react-bootstrap';
+import './App.css'
 
 class App extends React.Component {
     constructor(props) {
@@ -9,16 +9,10 @@ class App extends React.Component {
         this.state = {
             deadline: 'June 04 2019',
             buttonActivity: true
-            // isToggleOnInput: false
         }
     }
 
     regExpForInput = /^\b[\Da-z]{3,9}\b\s(0?[1-9]|[12]\d|3[01])\s(201[89]|20[2-9]\d|2[1-9]\d{2}|[3-9]\d{3})$/i;
-
-    componentDidMount() {
-        // let element = document.getElementsByTagName("Button")[0];
-        // console.log(element);
-    }
 
     writeInInput = event => {
 
@@ -28,17 +22,7 @@ class App extends React.Component {
             newDeadLine: event.target.value,
             buttonActivity: !this.regExpForInput.test(event.target.value)
         })
-
-        // this.helpBlockContext()
     }
-
-    // helpBlockContext = () => {
-    //     if (!this.state.buttonActivity) {
-    //         this.setState(prevState => ({
-    //             isToggleOnInput: !prevState.isToggleOnInput
-    //         }));
-    //     }
-    // }
 
     changeDeadLine = () => {
         this.setState({
