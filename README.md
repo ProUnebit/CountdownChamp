@@ -3,6 +3,7 @@
 **Link:** [https://countdown-champ.now.sh](https://countdown-champ.now.sh)
 
 It's a simple **React App**, but working: enter any future date and see **countdown**, default value - my birthday next year.
+
 The format is: '**Month DD YYYY**'
 
 (without custom webpack, based on ```facebook/create-react-app``` bundle)
