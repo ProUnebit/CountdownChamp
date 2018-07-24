@@ -1,6 +1,6 @@
 ## Countdown Champ
 
-**Link:** [link](link)
+**Link:** [https://countdown-champ.now.sh](https://countdown-champ.now.sh)
 
 It's a simple **React App**, but working: enter any future date and see **countdown**, default value - my birthday next year.
 The format is: '**Month DD YYYY**'
