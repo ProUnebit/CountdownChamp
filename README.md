@@ -1,4 +1,4 @@
-## Countdown Champ
+## Countdown Champ 🕑
 
 **Link:** [https://countdown-champ.now.sh](https://countdown-champ.now.sh)
 
